@@ -127,8 +127,8 @@ class Dataset_Pred(Dataset):
     
 #*****************************************************
 
-os.chdir(os.getcwd())
-os.chdir('C:\Users\yangilkim\Documents\Informer2020\haehan')
+print(os.getcwd())
+os.chdir("C:/Users/yangilkim/Documents/Informer2020\haehan")
 
 data = pd.read_csv("서인천IC-부평IC 평균속도.csv", encoding='CP949')
 plt.figure(figsize=(20,5))
@@ -146,7 +146,6 @@ data["value"] = min_max_scaler.fit_transform(data["value"].to_numpy().reshape(-1
 data = data[["date", "value"]]
 
 data_train = data.iloc[:-24*7].copy()
-
 pred_len = 24*7
 
 seq_len = pred_len#인풋 크기

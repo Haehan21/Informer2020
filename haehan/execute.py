@@ -166,7 +166,7 @@ enc_in = 1
 dec_in = 1
 c_out = 1
 device = torch.device("cuda:1")
-
+exit()
 model = Informer(enc_in, dec_in, c_out, seq_len, label_len, pred_len, device = device).to(device)
 learning_rate = 1e-4
 criterion =  nn.MSELoss()
